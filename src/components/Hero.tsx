@@ -40,7 +40,7 @@ export default function Hero() {
           className="w-full h-full object-cover opacity-75"
         >
           {/* Using the beautiful Jesus.Net Philippines local video */}
-          <source src="/video/hero-bg.mp4" type="video/mp4" />
+          <source src="/video/banner-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         
