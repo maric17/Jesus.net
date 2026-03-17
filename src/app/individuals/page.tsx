@@ -16,28 +16,28 @@ const TOOLKIT = [
   {
     title: "Himala Everyday",
     description: "Start each day with God. Our Filipino devotionals make Scripture practical and personal—perfect for busy lives.",
-    link: "https://himala.everyday.ph.jesus.net",
-    displayLink: "himala.everyday.ph.jesus.net",
+    link: "https://ph.jesus.net/a-miracle-every-day",
+    displayLink: "ph.jesus.net/a-miracle-every-day",
     icon: BookHeart,
   },
   {
     title: "MyJourney with The Chosen",
     description: "Go deeper into the stories of Jesus through interactive Bible studies paired with The Chosen series.",
-    link: "https://myjourney.ph.jesus.net",
+    link: "https://myjourney.ph.jesus.net/",
     displayLink: "myjourney.ph.jesus.net",
     icon: Film,
   },
   {
     title: "Watch The Chosen (Free)",
     description: "Experience the life of Jesus like never before. Stream all seasons free and see the Gospel come alive.",
-    link: "https://thechosen.ph.jesus.net",
-    displayLink: "thechosen.ph.jesus.net",
+    link: "https://ph.jesus.net/films-and-series/the-chosen",
+    displayLink: "ph.jesus.net/films-and-series/the-chosen",
     icon: PlayCircle,
   },
   {
     title: "Join Our Community",
     description: "Connect with other believers on the same journey. Find encouragement, accountability, and friendship.",
-    link: "https://ph.jesus.net/community",
+    link: "/community",
     displayLink: "ph.jesus.net/community",
     icon: Users,
   },
@@ -232,22 +232,22 @@ export default function IndividualsPage() {
               {
                 title: "MyJourney with The Chosen",
                 description: "The perfect small group companion. Watch episodes together, then use our guided discussion questions and Scripture deep-dives. No preparation needed!",
-                link: "https://myjourney.ph.jesus.net",
+                link: "https://myjourney.ph.jesus.net/",
                 displayLink: "myjourney.ph.jesus.net",
                 icon: BookOpen
               },
               {
                 title: "Himala Everyday (Daily Devotion)",
                 description: "Assign daily readings between meetings. Members come prepared with fresh insights to share.",
-                link: "https://himala.everyday.ph.jesus.net",
-                displayLink: "himala.everyday.ph.jesus.net",
+                link: "https://ph.jesus.net/a-miracle-every-day",
+                displayLink: "ph.jesus.net/a-miracle-every-day",
                 icon: Coffee
               },
               {
                 title: "Test of Character",
                 description: "Fun icebreaker activity! Discover which Bible character each member relates to most—leads to great discussions about faith and personality.",
-                link: "https://testofcharacter.ph.jesus.net",
-                displayLink: "testofcharacter.ph.jesus.net",
+                link: "https://cloud.m.jesus.net/chosen-test-of-character?language=TLEN",
+                displayLink: "cloud.m.jesus.net/chosen-test-of-character",
                 icon: Smile
               }
             ].map((tool, idx) => {

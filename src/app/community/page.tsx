@@ -28,7 +28,7 @@ const SERVE_OPTIONS = [
     title: "Become an E-Coach",
     description: "Help people in distress through online conversations. We train you to provide spiritual support and guidance to those seeking help.",
     linkText: "Apply to be an E-Coach",
-    href: "/volunteer/e-coach",
+    href: "https://ph.jesus.net/e-coach",
     icon: HeartHandshake,
     color: "bg-purple-500/10 text-purple-400"
   },
