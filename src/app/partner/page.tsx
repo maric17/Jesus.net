@@ -15,7 +15,8 @@ import {
   ExternalLink,
   ChevronRight,
   ClipboardCheck,
-  Info
+  Info,
+  Link
 } from "lucide-react";
 import { FadeIn } from "@/components/FadeIn";
 import { motion, AnimatePresence, useInView, useSpring, useTransform } from "framer-motion";
@@ -45,23 +46,23 @@ function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: strin
 }
 
 const LINKS = [
-  { name: "Himala Everyday", url: "himala.everyday.ph.jesus.net", category: "Daily Content" },
-  { name: "MyJourney with The Chosen", url: "myjourney.ph.jesus.net", category: "Discipleship" },
-  { name: "The Life of Jesus Film", url: "lifeofjesus.ph.jesus.net", category: "Film/Media" },
-  { name: "The Life of Jesus (Churches)", url: "ph.jesus.net/churches/screening", category: "Church Tools" },
-  { name: "The Chosen Series", url: "thechosen.ph.jesus.net", category: "Media" },
-  { name: "The Chosen (Workplace)", url: "thechosen.ph.jesus.net/workplace", category: "Corporate" },
-  { name: "Test of Character", url: "testofcharacter.ph.jesus.net", category: "Engagement" },
-  { name: "GenZ Sessions", url: "genz.ph.jesus.net", category: "Youth" },
-  { name: "Digital Disciples PH (Facebook)", url: "facebook.com/groups/digitaldisciplesph", category: "Community" },
+  { name: "Himala Everyday", url: "https://ph.jesus.net/a-miracle-every-day", category: "Daily Content" },
+  { name: "MyJourney with The Chosen", url: "https://myjourney.ph.jesus.net", category: "Discipleship" },
+  { name: "The Life of Jesus Film", url: "https://lifeofjesus.ph.jesus.net", category: "Film/Media" },
+  { name: "The Life of Jesus (Churches)", url: "https://ph.jesus.net/churches/screening", category: "Church Tools" },
+  { name: "The Chosen Series", url: "https://ph.jesus.net/films-and-series/the-chosen", category: "Media" },
+  { name: "The Chosen (Workplace)", url: "https://thechosen.ph.jesus.net/workplace", category: "Corporate" },
+  { name: "Test of Character", url: "https://cloud.m.jesus.net/chosen-test-of-character?language=TLEN", category: "Engagement" },
+  { name: "GenZ Sessions", url: "https://ph.jesus.net/the-chosen-gen-z-sessions", category: "Youth" },
+  { name: "Digital Disciples PH (Facebook)", url: "https://www.facebook.com/groups/digitaldisciplesph/", category: "Community" },
   { name: "Digital Disciples PH (Viber)", url: "viber.com/digitaldisciplesph", category: "Community" },
-  { name: "E-Coach Application", url: "ph.jesus.net/volunteer/ecoach", category: "Volunteer" },
-  { name: "Creative Volunteer Application", url: "ph.jesus.net/volunteer/creative", category: "Volunteer" },
-  { name: "General Volunteer Form", url: "ph.jesus.net/volunteer", category: "Volunteer" },
-  { name: "Give/Donate", url: "ph.jesus.net/give", category: "Partnership" },
-  { name: "Prayer Corner", url: "ph.jesus.net/prayer", category: "Partnership" },
-  { name: "Partnership Form", url: "ph.jesus.net/partner/collaborate", category: "Partnership" },
-  { name: "Church Consultation Booking", url: "ph.jesus.net/churches/consult", category: "Church Tools" },
+  { name: "E-Coach Application", url: "https://ph.jesus.net/e-coach", category: "Volunteer" },
+  { name: "Creative Volunteer Application", url: "https://ph.jesus.net/volunteer/creative", category: "Volunteer" },
+  { name: "General Volunteer Form", url: "https://ph.jesus.net/maging-volunteer", category: "Volunteer" },
+  { name: "Give/Donate", url: "https://ph.jesus.net/a-miracle-every-day/donation-page", category: "Partnership" },
+  { name: "Prayer Corner", url: "https://ph.jesus.net/need-prayer", category: "Partnership" },
+  { name: "Partnership Form", url: "https://ph.jesus.net/partnership", category: "Partnership" },
+  { name: "Church Consultation Booking", url: "https://ph.jesus.net/churches/consult", category: "Church Tools" },
 ];
 
 // --- Partner Data ---
@@ -178,7 +179,7 @@ export default function PartnerPage() {
             {/* GIVE Card */}
             <FadeIn direction="up" delay={0.1}>
               <div 
-                onClick={() => setActiveModal("give")}
+             
                 className="h-full p-10 bg-white/5 backdrop-blur-sm rounded-[3rem] border border-white/10 hover:border-brand-yellow/30 transition-all duration-500 group flex flex-col items-center text-center cursor-pointer hover:bg-white/[0.08]"
               >
                 <div className="w-20 h-20 bg-brand-yellow/10 rounded-full flex items-center justify-center mb-8 border border-brand-yellow/20 group-hover:scale-110 transition-transform duration-500">
@@ -189,7 +190,7 @@ export default function PartnerPage() {
                   Support our mission financially. Every peso helps reach another soul.
                 </p>
                 <div className="inline-flex items-center gap-2 text-brand-yellow font-bold group-hover:gap-4 transition-all">
-                  Give Now <ArrowRight size={20} />
+                  <Link href="https://ph.jesus.net/a-miracle-every-day/donation-page">Give Now <ArrowRight size={20} /></Link>
                 </div>
               </div>
             </FadeIn>
@@ -197,7 +198,7 @@ export default function PartnerPage() {
             {/* PRAY Card */}
             <FadeIn direction="up" delay={0.2}>
               <div 
-                onClick={() => setActiveModal("pray")}
+             
                 className="h-full p-10 bg-white/5 backdrop-blur-sm rounded-[3rem] border border-white/10 hover:border-brand-yellow/30 transition-all duration-500 group flex flex-col items-center text-center cursor-pointer hover:bg-white/[0.08]"
               >
                 <div className="w-20 h-20 bg-brand-yellow/10 rounded-full flex items-center justify-center mb-8 border border-brand-yellow/20 group-hover:scale-110 transition-transform duration-500">
@@ -208,7 +209,7 @@ export default function PartnerPage() {
                   Join our prayer community. See current requests and share yours.
                 </p>
                 <div className="inline-flex items-center gap-2 text-brand-yellow font-bold group-hover:gap-4 transition-all">
-                  Prayer Corner <ArrowRight size={20} />
+                  <Link href="https://ph.jesus.net/need-prayer">Prayer Corner <ArrowRight size={20} /></Link>
                 </div>
               </div>
             </FadeIn>
@@ -216,7 +217,7 @@ export default function PartnerPage() {
             {/* COLLABORATE Card */}
             <FadeIn direction="up" delay={0.3}>
               <div 
-                onClick={() => setActiveModal("collaborate")}
+                
                 className="h-full p-10 bg-white/5 backdrop-blur-sm rounded-[3rem] border border-white/10 hover:border-brand-yellow/30 transition-all duration-500 group flex flex-col items-center text-center cursor-pointer hover:bg-white/[0.08]"
               >
                 <div className="w-20 h-20 bg-brand-yellow/10 rounded-full flex items-center justify-center mb-8 border border-brand-yellow/20 group-hover:scale-110 transition-transform duration-500">
@@ -227,7 +228,7 @@ export default function PartnerPage() {
                   Churches, organizations, and businesses—let&apos;s work together.
                 </p>
                 <div className="inline-flex items-center gap-2 text-brand-yellow font-bold group-hover:gap-4 transition-all">
-                  Partnership Form <ArrowRight size={20} />
+                  <Link href="https://ph.jesus.net/partnership">Partnership Form <ArrowRight size={20} /></Link>
                 </div>
               </div>
             </FadeIn>

@@ -19,22 +19,22 @@ const CHOSEN_RESOURCES = [
   {
     title: "Watch Together",
     description: "Stream episodes during cell groups, youth nights, or Sunday gatherings.",
-    url: "https://thechosen.ph.jesus.net",
-    linkText: "thechosen.ph.jesus.net",
+    url: "https://ph.jesus.net/films-and-series/the-chosen",
+    linkText: "ph.jesus.net/films-and-series/the-chosen",
     icon: PlayCircle
   },
   {
     title: "Test of Character",
     description: "Fun personality quiz connecting members to Bible characters—great for small groups.",
-    url: "https://testofcharacter.ph.jesus.net",
-    linkText: "testofcharacter.ph.jesus.net",
+    url: "https://cloud.m.jesus.net/chosen-test-of-character?language=TLEN",
+    linkText: "cloud.m.jesus.net/chosen-test-of-character?language=TLEN",
     icon: Users
   },
   {
     title: "GenZ Sessions",
     description: "Specially designed content for your youth ministry to engage the next generation.",
-    url: "https://genz.ph.jesus.net",
-    linkText: "genz.ph.jesus.net",
+    url: "https://ph.jesus.net/the-chosen-gen-z-sessions",
+    linkText: "ph.jesus.net/the-chosen-gen-z-sessions",
     icon: MessageSquare
   }
 ];
@@ -246,7 +246,7 @@ export default function ChurchesPage() {
                 Give every member a personal discipleship companion. MyJourney guides believers through Scripture with interactive content that deepens faith daily.
               </p>
               <Link 
-                href="https://myjourney.ph.jesus.net"
+                href="https://myjourney.ph.jesus.net/"
                 className="inline-flex items-center gap-3 px-10 py-5 bg-brand-yellow text-brand-black font-bold rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl shadow-brand-yellow/10"
               >
                 Explore MyJourney <ArrowRight size={20} />
@@ -268,7 +268,7 @@ export default function ChurchesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link 
-                href="https://facebook.com/groups/digitaldisciplesph"
+                href="https://www.facebook.com/groups/digitaldisciplesph/"
                 target="_blank"
                 className="w-full sm:w-auto px-10 py-5 bg-brand-black text-white font-bold rounded-2xl hover:shadow-black/30 hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3"
               >
