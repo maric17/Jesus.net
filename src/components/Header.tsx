@@ -2,16 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Globe, Search } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { name: "Our Tools", href: "#tools" },
-  { name: "About", href: "#about" },
-  { name: "For Individuals", href: "#individuals" },
-  { name: "For Churches", href: "#churches" },
-  { name: "For Business", href: "#business" },
-  { name: "Community", href: "#community" },
+  { name: "Individuals", href: "/individuals" },
+  { name: "Churches", href: "/churches" },
+  { name: "Community", href: "/community" },
+  { name: "Partner", href: "/partner" },
 ];
 
 export default function Header() {
@@ -91,13 +89,6 @@ export default function Header() {
             )}>
               <Globe className="w-5 h-5" />
             </button>
-            <button className={cn(
-              "hidden md:flex p-2 rounded-full transition-colors hover:bg-white/10",
-              isScrolled ? "text-white/80" : "text-white/90"
-            )}>
-              <Search className="w-5 h-5" />
-            </button>
-            
             {/* Mobile Menu Toggle */}
             <button
               className={cn(

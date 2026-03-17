@@ -59,6 +59,7 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-2 uppercase tracking-wider text-xs">Company</h4>
             <Link href="#" className="hover:text-brand-yellow transition-colors text-sm">About Us</Link>
             <Link href="#" className="hover:text-brand-yellow transition-colors text-sm">Contact</Link>
+            <Link href="/partner" className="hover:text-brand-yellow transition-colors text-sm">Partner with Us</Link>
             <Link href="#" className="hover:text-brand-yellow transition-colors text-sm">Volunteer</Link>
             <Link href="#" className="hover:text-brand-yellow transition-colors text-sm">Privacy Policy</Link>
           </div>
