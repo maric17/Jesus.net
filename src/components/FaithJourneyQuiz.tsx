@@ -116,7 +116,7 @@ export default function FaithJourneyQuiz() {
     return (
       <div className="max-w-2xl mx-auto">
         <FadeIn direction="up">
-          <div className="bg-white rounded-[3rem] p-12 text-brand-black shadow-2xl border border-brand-yellow/20">
+          <div className="bg-brand-light rounded-[3rem] p-12 text-brand-black shadow-2xl border border-brand-yellow/20">
             <span className="text-brand-yellow font-bold tracking-widest uppercase text-sm mb-4 block">Recommended for You</span>
             <div className="w-20 h-20 bg-brand-yellow rounded-2xl flex items-center justify-center mb-8 shadow-xl shadow-brand-yellow/20">
               <Icon className="text-brand-black" size={40} />
