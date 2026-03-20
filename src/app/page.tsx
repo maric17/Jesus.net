@@ -6,7 +6,7 @@ import FreeTools from "@/components/FreeTools";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-brand-light dark:bg-brand-black overflow-hidden relative">
+    <main className="flex min-h-screen flex-col bg-brand-light overflow-hidden relative">
       <Hero />
       <QuickStart />
       <AboutSection />

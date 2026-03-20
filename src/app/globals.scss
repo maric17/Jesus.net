@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light;
   --background: #EDE6DF;
   --foreground: #1A1A1A;
   --color-brand-primary: #E69A2E;
@@ -30,12 +31,6 @@
   --bg-brand-full-gradient: linear-gradient(180deg, var(--color-brand-red) 0%, var(--color-brand-orange) 50%, var(--color-brand-blue) 100%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #f4f4f5;
-  }
-}
 
 body {
   background: var(--background);
