@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #111111;
-  --color-brand-primary: #F15A24;
-  --color-brand-orange: #F15A24;
-  --color-brand-red: #EF4123;
-  --color-brand-blue: #0072BC;
-  --color-brand-dark: #111111;
-  --color-brand-black: #000000;
+  --background: #EDE6DF;
+  --foreground: #1A1A1A;
+  --color-brand-primary: #E69A2E;
+  --color-brand-orange: #E69A2E;
+  --color-brand-red: #E69A2E;
+  --color-brand-blue: #E69A2E;
+  --color-brand-dark: #1A1A1A;
+  --color-brand-black: #1A1A1A;
 }
 
 @theme inline {
@@ -17,10 +17,11 @@
   --font-sans: var(--font-montserrat);
   
   --color-brand-primary: var(--color-brand-primary);
-  --color-brand-yellow: var(--color-brand-orange); /* Map yellow to orange for compatibility */
+  --color-brand-yellow: var(--color-brand-primary);
   --color-brand-orange: var(--color-brand-orange);
   --color-brand-red: var(--color-brand-red);
   --color-brand-blue: var(--color-brand-blue);
+  --color-brand-light: var(--background);
   --color-brand-dark: var(--color-brand-dark);
   --color-brand-black: var(--color-brand-black);
   
@@ -46,7 +47,7 @@ body {
 /* Custom Scrollbar for Dark Elements */
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: rgba(250, 204, 21, 0.3) transparent;
+  scrollbar-color: rgba(230, 154, 46, 0.3) transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -58,10 +59,10 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(250, 204, 21, 0.2);
+  background: rgba(230, 154, 46, 0.2);
   border-radius: 20px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(250, 204, 21, 0.4);
+  background: rgba(230, 154, 46, 0.4);
 }
