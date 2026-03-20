@@ -121,7 +121,7 @@ export default function PartnerPage() {
             </span>
             <h1 className="text-4xl md:text-7xl font-bold mb-8 leading-tight tracking-tight">
               Together, We Can <br />
-              <span className="text-brand-yellow">Reach More</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-orange">Reach More</span>
             </h1>
           </FadeIn>
           
@@ -430,7 +430,7 @@ export default function PartnerPage() {
                             </div>
                           </div>
 
-                          <button type="submit" className="w-full py-5 bg-brand-yellow text-brand-black font-extrabold rounded-2xl shadow-2xl shadow-brand-yellow/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                          <button type="submit" className="w-full py-5 bg-gradient-to-r from-brand-red to-brand-orange text-white font-extrabold rounded-2xl shadow-2xl shadow-brand-red/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
                             Submit Donation Report
                           </button>
                         </form>

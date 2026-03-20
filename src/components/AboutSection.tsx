@@ -75,8 +75,8 @@ export default function AboutSection() {
           <circle cx="512" cy="512" r="512" fill="url(#brand-gradient)" fillOpacity="0.15" />
           <defs>
             <radialGradient id="brand-gradient">
-              <stop stopColor="#facc15" />
-              <stop offset="1" stopColor="#111111" />
+              <stop stopColor="var(--color-brand-red)" />
+              <stop offset="1" stopColor="var(--color-brand-dark)" />
             </radialGradient>
           </defs>
         </svg>

@@ -81,7 +81,7 @@ export default function FreeTools() {
   const displayTools = [...TOOLS, ...TOOLS];
 
   return (
-    <section className="py-24 bg-brand-yellow w-full text-brand-black overflow-hidden relative">
+    <section className="py-24 bg-gradient-to-br from-brand-red to-brand-orange w-full text-brand-black overflow-hidden relative">
       <div className="container mx-auto px-6 md:px-12 relative z-10 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
         <FadeIn direction="up" className="max-w-2xl">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-black">
