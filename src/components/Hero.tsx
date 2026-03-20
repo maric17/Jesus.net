@@ -1,41 +1,16 @@
 "use client";
 
-import React, { useRef, useState } from "react";
-import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { FadeIn } from "@/components/FadeIn";
 
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
-
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
-
   return (
     <section className="relative h-[92vh] min-h-[750px] w-full flex flex-col justify-center overflow-hidden bg-brand-black">
       {/* Background Video */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <video
-          ref={videoRef}
           autoPlay
           loop
-          muted={isMuted}
+          muted
           playsInline
           className="w-full h-full object-cover opacity-75"
         >
@@ -63,7 +38,7 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-brand-yellow text-brand-black font-semibold px-8 py-4 rounded-full transition-transform hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2 group">
+            <button className="bg-gradient-to-r from-brand-red to-brand-orange text-white font-bold px-8 py-4 rounded-full transition-all hover:scale-105 active:scale-95 shadow-lg shadow-brand-red/20 flex items-center justify-center gap-2 group">
               Get Started
             </button>
             <button className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-medium px-8 py-4 rounded-full transition-all border border-white/20 flex items-center justify-center">
@@ -72,32 +47,7 @@ export default function Hero() {
           </div>
         </FadeIn>
       </div>
-
-      {/* Video Controls Overlay */}
-      <div className="absolute bottom-10 right-6 md:right-12 z-20 flex gap-3">
-        <button 
-          onClick={togglePlay}
-          className="h-12 w-12 rounded-full bg-brand-black/40 backdrop-blur-md text-white border border-white/20 hover:bg-white/20 hover:border-white transition-all flex items-center justify-center group shadow-xl"
-          aria-label={isPlaying ? "Pause video" : "Play video"}
-        >
-          {isPlaying ? (
-            <Pause className="w-5 h-5 group-hover:scale-110 transition-transform" />
-          ) : (
-            <Play className="w-5 h-5 group-hover:scale-110 transition-transform translate-x-[1px]" />
-          )}
-        </button>
-        <button 
-          onClick={toggleMute}
-          className="h-12 w-12 rounded-full bg-brand-black/40 backdrop-blur-md text-white border border-white/20 hover:bg-white/20 hover:border-white transition-all flex items-center justify-center group shadow-xl"
-          aria-label={isMuted ? "Unmute video" : "Mute video"}
-        >
-          {isMuted ? (
-            <VolumeX className="w-5 h-5 group-hover:scale-110 transition-transform" />
-          ) : (
-            <Volume2 className="w-5 h-5 group-hover:scale-110 transition-transform" />
-          )}
-        </button>
-      </div>
     </section>
   );
 }
+

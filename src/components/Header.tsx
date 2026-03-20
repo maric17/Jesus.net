@@ -6,6 +6,7 @@ import { Menu, X, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
+  { name: "Home", href: "/" },
   { name: "Individuals", href: "/individuals" },
   { name: "Churches", href: "/churches" },
   { name: "Community", href: "/community" },

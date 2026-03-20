@@ -120,7 +120,7 @@ export default function CommunityPage() {
                 <div className="space-y-8">
                   <div>
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                      Join <span className="text-brand-yellow py-1 rounded-xl block">Digital Disciples PH</span>
+                      Join <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-orange block">Digital Disciples PH</span>
                     </h2>
                     <p className="text-xl text-gray-600 leading-relaxed font-light">
                       Our flagship community where ordinary believers become digital missionaries. Get equipped with tools, training, and content to share your faith online effectively.
@@ -232,7 +232,7 @@ export default function CommunityPage() {
             <Link 
               href="https://www.facebook.com/groups/digitaldisciplesph"
               target="_blank"
-              className="inline-flex items-center gap-4 px-12 py-6 bg-brand-black text-white text-xl font-bold rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl shadow-black/20"
+              className="inline-flex items-center gap-4 px-12 py-6 bg-gradient-to-r from-brand-red to-brand-orange text-white text-xl font-bold rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl shadow-brand-red/20"
             >
               Get Started Now <ArrowRight size={24} />
             </Link>

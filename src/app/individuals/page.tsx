@@ -125,7 +125,7 @@ export default function IndividualsPage() {
             <FadeIn direction="up" delay={0.1}>
               <h1 className="text-4xl md:text-7xl font-bold mb-8 leading-tight tracking-tight">
                 Gusto Mo Bang <br />
-                <span className="text-brand-yellow">Makilala si Jesus?</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-orange">Makilala si Jesus?</span>
               </h1>
             </FadeIn>
             <FadeIn direction="up" delay={0.2}>

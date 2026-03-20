@@ -3,7 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #111111;
-  --color-brand-yellow: #facc15;
+  --color-brand-primary: #F15A24;
+  --color-brand-orange: #F15A24;
+  --color-brand-red: #EF4123;
+  --color-brand-blue: #0072BC;
   --color-brand-dark: #111111;
   --color-brand-black: #000000;
 }
@@ -13,9 +16,17 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-montserrat);
   
-  --color-brand-yellow: var(--color-brand-yellow);
+  --color-brand-primary: var(--color-brand-primary);
+  --color-brand-yellow: var(--color-brand-orange); /* Map yellow to orange for compatibility */
+  --color-brand-orange: var(--color-brand-orange);
+  --color-brand-red: var(--color-brand-red);
+  --color-brand-blue: var(--color-brand-blue);
   --color-brand-dark: var(--color-brand-dark);
   --color-brand-black: var(--color-brand-black);
+  
+  /* Brand Gradients */
+  --bg-brand-gradient: linear-gradient(135deg, var(--color-brand-red) 0%, var(--color-brand-orange) 100%);
+  --bg-brand-full-gradient: linear-gradient(180deg, var(--color-brand-red) 0%, var(--color-brand-orange) 50%, var(--color-brand-blue) 100%);
 }
 
 @media (prefers-color-scheme: dark) {
