@@ -112,7 +112,7 @@ export default function CommunityPage() {
       </section>
 
       {/* Join Digital Disciples PH Section */}
-      <section className="py-24 bg-white text-brand-black">
+      <section className="py-24 bg-brand-light text-brand-black">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

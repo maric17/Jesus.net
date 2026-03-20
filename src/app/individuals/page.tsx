@@ -141,7 +141,7 @@ export default function IndividualsPage() {
       </section>
 
       {/* Your Personal Toolkit Section */}
-      <section className="py-24 bg-white text-brand-black">
+      <section className="py-24 bg-brand-light text-brand-black">
         <div className="container mx-auto px-6">
           <div className="mb-16">
             <FadeIn direction="up">
@@ -280,7 +280,7 @@ export default function IndividualsPage() {
         </div>
       </section>
       {/* For Business Leaders Section */}
-      <section id="business" className="py-24 bg-white text-brand-black overflow-hidden relative">
+      <section id="business" className="py-24 bg-brand-light text-brand-black overflow-hidden relative">
         <div className="absolute top-0 right-0 w-64 h-64 bg-brand-yellow/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mb-20">

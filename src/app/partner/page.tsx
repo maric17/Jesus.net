@@ -134,7 +134,7 @@ export default function PartnerPage() {
       </section>
 
       {/* Impact Section */}
-      <section className="py-24 bg-white text-brand-black overflow-hidden relative">
+      <section className="py-24 bg-brand-light text-brand-black overflow-hidden relative">
         <div className="container mx-auto px-6">
           <FadeIn direction="up" className="mb-16">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-brand-black">
@@ -237,7 +237,7 @@ export default function PartnerPage() {
       </section>
 
       {/* Tool Links Reference Section */}
-      <section className="py-24 bg-gray-50 border-t border-gray-200 relative text-brand-black">
+      <section className="py-24 bg-brand-light border-t border-gray-200 relative text-brand-black">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mb-16">
             <FadeIn direction="up">
