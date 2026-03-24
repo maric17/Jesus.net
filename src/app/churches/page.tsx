@@ -223,11 +223,11 @@ export default function ChurchesPage() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right" className="order-2 lg:order-1 flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-[280px]">
+              <div className="relative w-full max-w-[300px]">
                 <div className="absolute -top-10 -left-10 w-48 h-48 bg-brand-yellow/20 rounded-full blur-[60px]"></div>
-                <div className="relative z-10 aspect-[9/18.5] bg-brand-black rounded-[2rem] overflow-hidden border-4 border-white/10 shadow-2xl shadow-black/40">
+                <div className="relative z-10 aspect-[11/18.5] bg-brand-black rounded-[2rem] overflow-hidden border-4 border-white/10 shadow-2xl shadow-black/40">
                   <Image 
-                    src="/images/churches/Screenshot_205.jpg" 
+                    src="/images/churches/Taglish-iPhone-on-Hand.png" 
                     alt="MyJourney App Mockup" 
                     fill
                     className="object-cover"
