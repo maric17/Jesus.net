@@ -212,12 +212,22 @@ export default function CommunityPage() {
                     <p className="text-gray-400 mb-10 flex-grow leading-relaxed font-light">
                       {option.description}
                     </p>
-                    <button 
-                      onClick={() => handleOpenModal(option.title)}
-                      className="inline-flex items-center gap-2 text-brand-yellow font-bold hover:gap-4 transition-all duration-300 group/btn"
-                    >
-                      {option.linkText} <ArrowRight size={20} className="group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
+                    {option.title === "Become an E-Coach" ? (
+                      <Link 
+                        href={option.href}
+                        target="_blank"
+                        className="inline-flex items-center gap-2 text-brand-yellow font-bold hover:gap-4 transition-all duration-300 group/btn"
+                      >
+                        {option.linkText} <ArrowRight size={20} className="group-hover/btn:translate-x-1 transition-transform" />
+                      </Link>
+                    ) : (
+                      <button 
+                        onClick={() => handleOpenModal(option.title)}
+                        className="inline-flex items-center gap-2 text-brand-yellow font-bold hover:gap-4 transition-all duration-300 group/btn"
+                      >
+                        {option.linkText} <ArrowRight size={20} className="group-hover/btn:translate-x-1 transition-transform" />
+                      </button>
+                    )}
                   </div>
                 </FadeIn>
               );
