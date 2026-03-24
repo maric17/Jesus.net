@@ -5,7 +5,6 @@ import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { 
-  ExternalLink, 
   BookHeart, 
   Film, 
   PlayCircle, 
@@ -23,6 +22,7 @@ const TOOLS = [
     url: "https://ph.jesus.net/a-miracle-every-day",
     displayUrl: "ph.jesus.net/a-miracle-every-day",
     icon: BookHeart,
+    image: "/images/tools/himala.png",
   },
   {
     name: "MyJourney with The Chosen",
@@ -30,6 +30,7 @@ const TOOLS = [
     url: "https://myjourney.ph.jesus.net/",
     displayUrl: "myjourney.ph.jesus.net",
     icon: Film,
+    image: "/images/tools/my-journey.png",
   },
   {
     name: "The Life of Jesus Film",
@@ -37,6 +38,7 @@ const TOOLS = [
     url: "https://www.youtube.com/watch?v=DYBZQHLFHqs",
     displayUrl: "www.youtube.com/watch?v=DYBZQHLFHqs",
     icon: Video,
+    image: "/images/tools/jesus-film.png",
   },
   {
     name: "The Chosen Series",
@@ -44,6 +46,7 @@ const TOOLS = [
     url: "https://ph.jesus.net/films-and-series/the-chosen",
     displayUrl: "ph.jesus.net/films-and-series/the-chosen",
     icon: PlayCircle,
+    image: "/images/tools/the-chosen.png",
   },
 ];
 
@@ -121,29 +124,38 @@ export default function FreeTools() {
                   key={`${tool.name}-${index}`} 
                   className="flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_32%] pl-3 min-w-0"
                 >
-                  <div className="h-full bg-brand-black rounded-3xl p-8 md:p-10 flex flex-col hover:bg-neutral-900 shadow-2xl shadow-black/20 transition-all duration-500 group border border-white/5">
-                    <div className="flex items-start justify-between mb-8">
-                      <div className="p-4 bg-brand-yellow rounded-2xl text-brand-black group-hover:scale-110 transition-transform duration-500 shadow-xl shadow-brand-yellow/10">
-                        <Icon className="w-8 h-8" strokeWidth={1.5} />
-                      </div>
-                    </div>
+                  <div className="h-full relative overflow-hidden rounded-3xl group transition-all duration-500 shadow-2xl shadow-black/20 border border-white/5">
+                    {/* Background Image with Dark Overlay */}
+                    <div 
+                      className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110" 
+                      style={{ backgroundImage: `url(${tool.image})` }}
+                    />
+                    <div className="absolute inset-0 z-10 bg-gradient-to-t from-brand-black via-brand-black/95 to-brand-black/40 group-hover:via-brand-black/80 transition-colors duration-500" />
 
-                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white tracking-tight">
-                      {tool.name}
-                    </h3>
-                    
-                    <p className="text-white/60 mb-10 text-[16px] md:text-lg font-light leading-relaxed flex-grow">
-                      {tool.description}
-                    </p>
-                    
-                    <Link 
-                      href={tool.url}
-                      target="_blank"
-                      className="mt-auto inline-flex items-center justify-between w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 group-hover:border-brand-yellow/30 group-hover:bg-brand-yellow group-hover:text-brand-black text-brand-yellow font-semibold transition-all duration-500"
-                    >
-                      <span className="truncate mr-3">{tool.displayUrl}</span>
-                      <ExternalLink className="w-5 h-5 shrink-0 opacity-50 group-hover:opacity-100" />
-                    </Link>
+                    {/* Content */}
+                    <div className="relative z-20 h-full p-8 md:p-10 flex flex-col">
+                      <div className="flex items-start justify-between mb-8">
+                        <div className="p-4 bg-brand-yellow rounded-2xl text-brand-black group-hover:scale-110 transition-transform duration-500 shadow-xl shadow-brand-yellow/10">
+                          <Icon className="w-8 h-8" strokeWidth={1.5} />
+                        </div>
+                      </div>
+
+                      <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white tracking-tight">
+                        {tool.name}
+                      </h3>
+                      
+                      <p className="text-white/60 mb-10 text-[16px] md:text-lg font-light leading-relaxed flex-grow">
+                        {tool.description}
+                      </p>
+                      
+                      <Link 
+                        href={tool.url}
+                        target="_blank"
+                        className="mt-auto inline-flex items-center justify-center w-full px-6 py-4 rounded-2xl bg-brand-yellow text-brand-black font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:bg-white hover:scale-[1.02] active:scale-95"
+                      >
+                        Explore Now
+                      </Link>
+                    </div>
                   </div>
                 </div>
               );

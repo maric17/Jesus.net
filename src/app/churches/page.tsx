@@ -6,13 +6,14 @@ import Link from "next/link";
 import { 
   PlayCircle, 
   Users, 
-  BookOpen, 
+  Church, 
   MessageSquare, 
   ExternalLink,
   ChevronRight,
   ArrowRight
 } from "lucide-react";
 import { FadeIn } from "@/components/FadeIn";
+import ConsultationForm from "@/components/ConsultationForm";
 
 
 const CHOSEN_RESOURCES = [
@@ -221,18 +222,16 @@ export default function ChurchesPage() {
       <section className="py-24 bg-brand-dark text-white overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <FadeIn direction="right" className="order-2 lg:order-1">
-              <div className="relative">
-                <div className="absolute -top-20 -left-20 w-64 h-64 bg-brand-yellow/20 rounded-full blur-[80px]"></div>
-                <div className="relative z-10 bg-white/5 backdrop-blur-md rounded-[2.5rem] border border-white/10 p-4 md:p-8 transform rotate-3 hover:rotate-0 transition-transform duration-700 shadow-2xl">
-                  <div className="aspect-[9/16] bg-brand-black rounded-[1.5rem] overflow-hidden border-4 border-white/10 relative">
-                    <Image 
-                      src="/images/churches/myjourney-mockup.png" 
-                      alt="MyJourney App Mockup" 
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+            <FadeIn direction="right" className="order-2 lg:order-1 flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-[300px]">
+                <div className="absolute -top-10 -left-10 w-48 h-48 bg-brand-yellow/20 rounded-full blur-[60px]"></div>
+                <div className="relative z-10 aspect-[11/18.5] bg-brand-black rounded-[2rem] overflow-hidden border-4 border-white/10 shadow-2xl shadow-black/40">
+                  <Image 
+                    src="/images/churches/Taglish-iPhone-on-Hand.png" 
+                    alt="MyJourney App Mockup" 
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </FadeIn>
@@ -280,29 +279,18 @@ export default function ChurchesPage() {
       </section>
 
       {/* CTA section */}
-      <section className="py-32 relative">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-brand-black/95"></div>
-          <div className="absolute top-0 left-0 w-full h-full z-0 opacity-20 overflow-hidden">
-            <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-brand-yellow rounded-full blur-[150px]"></div>
-          </div>
+      <section className="py-24 bg-brand-black relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full z-0 opacity-10 pointer-events-none">
+          <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-brand-yellow rounded-full blur-[150px]"></div>
         </div>
-        
         <div className="container mx-auto px-6 relative z-10">
-          <FadeIn direction="up" className="max-w-4xl mx-auto p-12 md:p-20 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[3rem] text-center shadow-2xl">
-            <h2 className="text-3xl md:text-5xl font-bold mb-8">
-              Ready to Expand Your <br />Church&apos;s <span className="text-brand-yellow">Digital Impact?</span>
-            </h2>
-            <p className="text-xl text-gray-400 mb-12">
-              Our team is ready to help you implement these tools in your local context.
-            </p>
-            <Link 
-              href="/consultation" // Placeholder for booking form
-              className="inline-flex items-center gap-3 px-12 py-6 bg-brand-yellow text-brand-black text-xl font-extrabold rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-brand-yellow/20"
-            >
-              Schedule a Free Consultation <BookOpen size={24} />
-            </Link>
-          </FadeIn>
+          <ConsultationForm 
+            badge="Church Partnership"
+            title={<>Ready to Expand Your <br />Church&apos;s <span className="text-brand-yellow">Digital Impact?</span></>}
+            subtitle="Our team is ready to help you implement these tools in your local context. Schedule a free consultation today."
+            icon={Church}
+            messagePlaceholder="How can we help your church grow digitally?"
+          />
         </div>
       </section>
     </main>

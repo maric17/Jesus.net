@@ -48,15 +48,15 @@ const STATS = [
   },
   {
     icon: Languages,
-    value: 40,
-    suffix: "+",
+    value: 57,
+    suffix: "",
     label: "Languages",
     description: "Translating hope into native tongues.",
   },
   {
     icon: Users2,
-    value: 1000,
-    suffix: "M+", // 1000M+ representing 1B+
+    value: 1,
+    suffix: "B",
     label: "People Reached",
     description: "Total gospel presentations engaged online.",
   },

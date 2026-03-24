@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { 
@@ -15,6 +15,7 @@ import {
   Smartphone
 } from "lucide-react";
 import { FadeIn } from "@/components/FadeIn";
+import VolunteerModal from "@/components/VolunteerModal";
 
 const BENEFITS = [
   "Weekly training on digital evangelism strategies",
@@ -28,7 +29,7 @@ const SERVE_OPTIONS = [
     title: "Become an E-Coach",
     description: "Help people in distress through online conversations. We train you to provide spiritual support and guidance to those seeking help.",
     linkText: "Apply to be an E-Coach",
-    href: "https://ph.jesus.net/e-coach",
+    href: "https://jesus-net.typeform.com/to/Bl0m85Oz",
     icon: HeartHandshake,
     color: "bg-purple-500/10 text-purple-400"
   },
@@ -43,6 +44,13 @@ const SERVE_OPTIONS = [
 ];
 
 export default function CommunityPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedOpportunity, setSelectedOpportunity] = useState("");
+
+  const handleOpenModal = (title: string) => {
+    setSelectedOpportunity(title);
+    setIsModalOpen(true);
+  };
   return (
     <main className="bg-brand-black text-white min-h-screen">
       {/* Hero Section */}
@@ -204,12 +212,12 @@ export default function CommunityPage() {
                     <p className="text-gray-400 mb-10 flex-grow leading-relaxed font-light">
                       {option.description}
                     </p>
-                    <Link 
-                      href={option.href}
-                      className="inline-flex items-center gap-2 text-brand-yellow font-bold hover:gap-4 transition-all duration-300"
+                    <button 
+                      onClick={() => handleOpenModal(option.title)}
+                      className="inline-flex items-center gap-2 text-brand-yellow font-bold hover:gap-4 transition-all duration-300 group/btn"
                     >
-                      {option.linkText} <ArrowRight size={20} />
-                    </Link>
+                      {option.linkText} <ArrowRight size={20} className="group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
                   </div>
                 </FadeIn>
               );
@@ -239,6 +247,12 @@ export default function CommunityPage() {
           </FadeIn>
         </div>
       </section>
+      {/* Modal */}
+      <VolunteerModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        opportunityTitle={selectedOpportunity}
+      />
     </main>
   );
 }
