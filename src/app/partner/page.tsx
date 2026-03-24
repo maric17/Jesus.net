@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { 
-  Heart, 
+  Church, 
   ArrowRight, 
   X, 
   Upload, 
@@ -10,14 +10,9 @@ import {
   Users, 
   TrendingUp,
   Globe,
-  Sparkles,
-  Search,
-  ExternalLink,
-  ChevronRight,
-  ClipboardCheck,
-  Info,
-  Link
+  Sparkles
 } from "lucide-react";
+import Link from "next/link";
 import { FadeIn } from "@/components/FadeIn";
 import { motion, AnimatePresence, useInView, useSpring, useTransform } from "framer-motion";
 
@@ -45,47 +40,47 @@ function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: strin
   return <motion.span ref={ref}>{displayValue}</motion.span>;
 }
 
-const LINKS = [
-  { name: "Himala Everyday", url: "https://ph.jesus.net/a-miracle-every-day", category: "Daily Content" },
-  { name: "MyJourney with The Chosen", url: "https://myjourney.ph.jesus.net", category: "Discipleship" },
-  { name: "The Life of Jesus Film", url: "https://lifeofjesus.ph.jesus.net", category: "Film/Media" },
-  { name: "The Life of Jesus (Churches)", url: "https://ph.jesus.net/churches/screening", category: "Church Tools" },
-  { name: "The Chosen Series", url: "https://ph.jesus.net/films-and-series/the-chosen", category: "Media" },
-  { name: "The Chosen (Workplace)", url: "https://thechosen.ph.jesus.net/workplace", category: "Corporate" },
-  { name: "Test of Character", url: "https://cloud.m.jesus.net/chosen-test-of-character?language=TLEN", category: "Engagement" },
-  { name: "GenZ Sessions", url: "https://ph.jesus.net/the-chosen-gen-z-sessions", category: "Youth" },
-  { name: "Digital Disciples PH (Facebook)", url: "https://www.facebook.com/groups/digitaldisciplesph/", category: "Community" },
-  { name: "Digital Disciples PH (Viber)", url: "viber.com/digitaldisciplesph", category: "Community" },
-  { name: "E-Coach Application", url: "https://ph.jesus.net/e-coach", category: "Volunteer" },
-  { name: "Creative Volunteer Application", url: "https://ph.jesus.net/volunteer/creative", category: "Volunteer" },
-  { name: "General Volunteer Form", url: "https://ph.jesus.net/maging-volunteer", category: "Volunteer" },
-  { name: "Give/Donate", url: "https://ph.jesus.net/a-miracle-every-day/donation-page", category: "Partnership" },
-  { name: "Prayer Corner", url: "https://ph.jesus.net/need-prayer", category: "Partnership" },
-  { name: "Partnership Form", url: "https://ph.jesus.net/partnership", category: "Partnership" },
-  { name: "Church Consultation Booking", url: "https://ph.jesus.net/churches/consult", category: "Church Tools" },
-];
+// const LINKS = [
+//   { name: "Himala Everyday", url: "https://ph.jesus.net/a-miracle-every-day", category: "Daily Content" },
+//   { name: "MyJourney with The Chosen", url: "https://myjourney.ph.jesus.net", category: "Discipleship" },
+//   { name: "The Life of Jesus Film", url: "https://lifeofjesus.ph.jesus.net", category: "Film/Media" },
+//   { name: "The Life of Jesus (Churches)", url: "https://ph.jesus.net/churches/screening", category: "Church Tools" },
+//   { name: "The Chosen Series", url: "https://ph.jesus.net/films-and-series/the-chosen", category: "Media" },
+//   { name: "The Chosen (Workplace)", url: "https://thechosen.ph.jesus.net/workplace", category: "Corporate" },
+//   { name: "Test of Character", url: "https://cloud.m.jesus.net/chosen-test-of-character?language=TLEN", category: "Engagement" },
+//   { name: "GenZ Sessions", url: "https://ph.jesus.net/the-chosen-gen-z-sessions", category: "Youth" },
+//   { name: "Digital Disciples PH (Facebook)", url: "https://www.facebook.com/groups/digitaldisciplesph/", category: "Community" },
+//   { name: "Digital Disciples PH (Viber)", url: "viber.com/digitaldisciplesph", category: "Community" },
+//   { name: "E-Coach Application", url: "https://ph.jesus.net/e-coach", category: "Volunteer" },
+//   { name: "Creative Volunteer Application", url: "https://ph.jesus.net/volunteer/creative", category: "Volunteer" },
+//   { name: "General Volunteer Form", url: "https://ph.jesus.net/maging-volunteer", category: "Volunteer" },
+//   { name: "Give/Donate", url: "https://ph.jesus.net/a-miracle-every-day/donation-page", category: "Partnership" },
+//   { name: "Prayer Corner", url: "https://ph.jesus.net/need-prayer", category: "Partnership" },
+//   { name: "Partnership Form", url: "https://ph.jesus.net/partnership", category: "Partnership" },
+//   { name: "Church Consultation Booking", url: "https://ph.jesus.net/churches/consult", category: "Church Tools" },
+// ];
 
 // --- Partner Data ---
 const IMPACT_STATS = [
-  { label: "Total Engagements", value: 1250000, suffix: "+", icon: TrendingUp },
-  { label: "Decisions for Christ", value: 58400, suffix: "+", icon: Heart },
-  { label: "Digital Disciples Trained", value: 12400, suffix: "+", icon: Users },
-  { label: "Provinces Reached", value: 82, suffix: "/82", icon: Globe },
+  { label: "Total Engagements", value: 5, suffix: "M+", icon: TrendingUp },
+  { label: "Churches Reached", value: 3000, suffix: "", icon: Church },
+  { label: "Digital Disciples", value: 400, suffix: "+", icon: Users },
+  { label: "Provinces Reached", value: 20, suffix: "/82", icon: Globe },
 ];
 
 export default function PartnerPage() {
   const [activeModal, setActiveModal] = useState<"give" | "pray" | "collaborate" | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
 
-  const filteredLinks = LINKS.filter(link => 
-    link.name.toLowerCase().includes(search.toLowerCase()) || 
-    link.url.toLowerCase().includes(search.toLowerCase())
-  );
+  // const filteredLinks = LINKS.filter(link => 
+  //   link.name.toLowerCase().includes(search.toLowerCase()) || 
+  //   link.url.toLowerCase().includes(search.toLowerCase())
+  // );
 
-  const copyToClipboard = (url: string) => {
-    navigator.clipboard.writeText(url);
-  };
+  // const copyToClipboard = (url: string) => {
+  //   navigator.clipboard.writeText(url);
+  // };
 
   // Body scroll lock
   useEffect(() => {
@@ -189,9 +184,12 @@ export default function PartnerPage() {
                 <p className="text-gray-400 mb-8 flex-grow leading-relaxed font-light">
                   Support our mission financially. Every peso helps reach another soul.
                 </p>
-                <div className="inline-flex items-center gap-2 text-brand-yellow font-bold group-hover:gap-4 transition-all">
-                  <Link href="https://ph.jesus.net/a-miracle-every-day/donation-page">Give Now <ArrowRight size={20} /></Link>
-                </div>
+                <Link 
+                  href="https://ph.jesus.net/a-miracle-every-day/donation-page"
+                  className="inline-flex items-center gap-2 text-brand-yellow font-bold group-hover:gap-4 transition-all whitespace-nowrap"
+                >
+                  Give Now <ArrowRight size={20} />
+                </Link>
               </div>
             </FadeIn>
 
@@ -208,9 +206,12 @@ export default function PartnerPage() {
                 <p className="text-gray-400 mb-8 flex-grow leading-relaxed font-light">
                   Join our prayer community. See current requests and share yours.
                 </p>
-                <div className="inline-flex items-center gap-2 text-brand-yellow font-bold group-hover:gap-4 transition-all">
-                  <Link href="https://ph.jesus.net/need-prayer">Prayer Corner <ArrowRight size={20} /></Link>
-                </div>
+                <Link 
+                  href="https://ph.jesus.net/need-prayer"
+                  className="inline-flex items-center gap-2 text-brand-yellow font-bold group-hover:gap-4 transition-all whitespace-nowrap"
+                >
+                  Prayer Corner <ArrowRight size={20} />
+                </Link>
               </div>
             </FadeIn>
 
@@ -227,9 +228,12 @@ export default function PartnerPage() {
                 <p className="text-gray-400 mb-8 flex-grow leading-relaxed font-light">
                   Churches, organizations, and businesses—let&apos;s work together.
                 </p>
-                <div className="inline-flex items-center gap-2 text-brand-yellow font-bold group-hover:gap-4 transition-all">
-                  <Link href="https://ph.jesus.net/partnership">Partnership Form <ArrowRight size={20} /></Link>
-                </div>
+                <Link 
+                  href="https://ph.jesus.net/partnership"
+                  className="inline-flex items-center gap-2 text-brand-yellow font-bold group-hover:gap-4 transition-all whitespace-nowrap"
+                >
+                  Partnership Form <ArrowRight size={20} />
+                </Link>
               </div>
             </FadeIn>
           </div>
@@ -237,7 +241,7 @@ export default function PartnerPage() {
       </section>
 
       {/* Tool Links Reference Section */}
-      <section className="py-24 bg-brand-light border-t border-gray-200 relative text-brand-black">
+      {/* <section className="py-24 bg-brand-light border-t border-gray-200 relative text-brand-black">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mb-16">
             <FadeIn direction="up">
@@ -334,7 +338,7 @@ export default function PartnerPage() {
             </div>
           </FadeIn>
         </div>
-      </section>
+      </section> */}
 
       {/* --- Modals --- */}
       <AnimatePresence>

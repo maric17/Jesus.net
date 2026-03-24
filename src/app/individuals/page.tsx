@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import FaithJourneyQuiz from "@/components/FaithJourneyQuiz";
+import ConsultationForm from "@/components/ConsultationForm";
 import { motion, AnimatePresence } from "framer-motion";
 
 const TOOLKIT = [
@@ -19,6 +20,7 @@ const TOOLKIT = [
     link: "https://ph.jesus.net/a-miracle-every-day",
     displayLink: "ph.jesus.net/a-miracle-every-day",
     icon: BookHeart,
+    image: "/images/tools/himala.png",
   },
   {
     title: "MyJourney with The Chosen",
@@ -26,6 +28,7 @@ const TOOLKIT = [
     link: "https://myjourney.ph.jesus.net/",
     displayLink: "myjourney.ph.jesus.net",
     icon: Film,
+    image: "/images/tools/my-journey.png",
   },
   {
     title: "Watch The Chosen (Free)",
@@ -33,6 +36,7 @@ const TOOLKIT = [
     link: "https://ph.jesus.net/films-and-series/the-chosen",
     displayLink: "ph.jesus.net/films-and-series/the-chosen",
     icon: PlayCircle,
+    image: "/images/tools/the-chosen.png",
   },
   {
     title: "Join Our Community",
@@ -40,6 +44,7 @@ const TOOLKIT = [
     link: "/community",
     displayLink: "ph.jesus.net/community",
     icon: Users,
+    image: "/images/tools/community.png",
   },
 ];
 
@@ -105,7 +110,7 @@ export default function IndividualsPage() {
       <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/images/individuals/hero-banner.png" 
+            src="/images/individuals/hero-banner-new.png" 
             alt="Personal Faith Journey" 
             fill
             className="object-cover opacity-40 contrast-[1.1]"
@@ -169,24 +174,34 @@ export default function IndividualsPage() {
               const Icon = tool.icon;
               return (
                 <FadeIn key={idx} direction="up" delay={idx * 0.1}>
-                  <div className="h-full p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:border-brand-yellow transition-all duration-500 hover:shadow-2xl group flex flex-col">
-                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 group-hover:bg-brand-yellow transition-all duration-500">
-                      <Icon className="text-brand-black" size={28} strokeWidth={1.5} />
+                  <div className="h-full relative overflow-hidden rounded-[2.5rem] group transition-all duration-500 shadow-2xl shadow-black/20 border border-white/5 bg-brand-black">
+                    {/* Background Image with Dark Overlay */}
+                    <div 
+                      className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110" 
+                      style={{ backgroundImage: `url(${tool.image})` }}
+                    />
+                    <div className="absolute inset-0 z-10 bg-gradient-to-t from-brand-black via-brand-black/95 to-brand-black/40 group-hover:via-brand-black/80 transition-colors duration-500" />
+
+                    {/* Content */}
+                    <div className="relative z-20 h-full p-8 flex flex-col min-h-[420px]">
+                      <div className="w-14 h-14 bg-brand-yellow rounded-2xl flex items-center justify-center mb-8 shadow-xl shadow-brand-yellow/10 group-hover:scale-110 group-hover:bg-white transition-all duration-500">
+                        <Icon className="text-brand-black" size={28} strokeWidth={1.5} />
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold mb-4 text-white tracking-tight">{tool.title}</h3>
+                      
+                      <p className="text-white/60 mb-8 flex-grow leading-relaxed font-light">
+                        {tool.description}
+                      </p>
+                      
+                      <Link 
+                        href={tool.link}
+                        target="_blank"
+                        className="mt-auto inline-flex items-center justify-center w-full px-6 py-4 rounded-2xl bg-brand-yellow text-brand-black font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:bg-white hover:scale-[1.02] active:scale-95"
+                      >
+                        Launch Tool
+                      </Link>
                     </div>
-                    <h3 className="text-2xl font-bold mb-4">{tool.title}</h3>
-                    <p className="text-gray-600 mb-8 flex-grow leading-relaxed">
-                      {tool.description}
-                    </p>
-                    <Link 
-                      href={tool.link}
-                      target="_blank"
-                      className="mt-auto inline-flex items-center justify-between p-4 bg-white rounded-xl border border-gray-100 text-brand-black font-bold group-hover:bg-black group-hover:text-white transition-all duration-300"
-                    >
-                      <span className="truncate mr-2 font-mono text-sm opacity-60 group-hover:opacity-100 italic">
-                        {tool.displayLink}
-                      </span>
-                      <ExternalLink size={18} className="shrink-0" />
-                    </Link>
                   </div>
                 </FadeIn>
               );
@@ -203,7 +218,7 @@ export default function IndividualsPage() {
               <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider uppercase bg-brand-yellow/10 text-brand-yellow rounded-full border border-brand-yellow/20">
                 For Bible Study & Discipleship Group Leaders
               </span>
-              <h2 className="text-3xl md:text-6xl font-bold tracking-tight mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
                 Free Resources for <span className="text-brand-yellow">Your Group</span>
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl leading-relaxed font-light">
@@ -213,7 +228,9 @@ export default function IndividualsPage() {
             
             <FadeIn direction="left" delay={0.2}>
               <Link 
-                href="/downloads/leaders-quick-start-guide.pdf"
+                href="/images/tools/Jesus_Net_PH_Bible_Study_Leaders_Guide.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 hover:border-brand-yellow/50 hover:bg-white/10 text-white rounded-2xl transition-all group"
               >
                 <div className="p-2 bg-brand-yellow rounded-lg group-hover:scale-110 transition-transform">
@@ -221,7 +238,7 @@ export default function IndividualsPage() {
                 </div>
                 <div className="text-left">
                   <div className="text-xs text-gray-400 font-bold uppercase tracking-wider">Download PDF</div>
-                  <div className="font-bold">Leader&apos;s Quick-Start Guide</div>
+                  <div className="font-bold">Bible Study Leader&apos;s Guide</div>
                 </div>
               </Link>
             </FadeIn>
@@ -298,34 +315,19 @@ export default function IndividualsPage() {
             </FadeIn>
           </div>
 
-          {/* Testimonials UX Note */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24">
-            <FadeIn direction="right">
-              <div className="group relative aspect-video bg-gray-900 rounded-[2.5rem] overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-brand-yellow opacity-10 group-hover:opacity-0 transition-opacity duration-700"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-brand-yellow rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-2xl">
-                    <PlayCircle size={40} className="text-brand-black ml-1" />
-                  </div>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
-                  <p className="text-white font-medium italic mb-2">&quot;Encountering Jesus as a team has brought a new level of integrity and compassion to our office.&quot;</p>
-                  <span className="text-brand-yellow text-sm font-bold tracking-widest uppercase">David T., CEO of Tech Solutions</span>
-                </div>
-              </div>
-            </FadeIn>
-            <FadeIn direction="left" delay={0.2}>
-              <div className="group relative aspect-video bg-gray-900 rounded-[2.5rem] overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-brand-yellow opacity-10 group-hover:opacity-0 transition-opacity duration-700"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-brand-yellow rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-2xl">
-                    <PlayCircle size={40} className="text-brand-black ml-1" />
-                  </div>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
-                  <p className="text-white font-medium italic mb-2">&quot;Our lunch-and-learns are now the highlight of the week. Even non-believers enjoy the conversations.&quot;</p>
-                  <span className="text-brand-yellow text-sm font-bold tracking-widest uppercase">Maria R., HR Director</span>
-                </div>
+          {/* Testimonial Video */}
+          <div className="mb-24">
+            <FadeIn direction="up">
+              <div className="w-full max-w-5xl mx-auto aspect-video bg-gray-900 rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-200">
+                <iframe 
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/G-Df7Z6pRiI" 
+                  title="Testimonial Video" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
               </div>
             </FadeIn>
           </div>
@@ -386,20 +388,7 @@ export default function IndividualsPage() {
 
           {/* Consultation CTA */}
           <FadeIn direction="up">
-            <div className="bg-brand-black rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden group shadow-2xl">
-              <div className="absolute top-0 right-0 p-12 opacity-5 -rotate-12 group-hover:scale-110 transition-transform duration-1000">
-                <Briefcase size={200} className="text-white" />
-              </div>
-              <h3 className="text-3xl md:text-5xl font-bold mb-8 text-white relative z-10">
-                Ready to Bring Jesus to <br />Your <span className="text-brand-yellow">Workplace?</span>
-              </h3>
-              <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto relative z-10">
-                Schedule a complimentary workplace implementation consultation to discuss how these tools can fit your unique business culture.
-              </p>
-              <button className="relative z-10 inline-flex items-center gap-3 px-10 py-5 bg-brand-yellow text-brand-black font-extrabold rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl shadow-brand-yellow/20">
-                Request a Consultation <ExternalLink size={20} />
-              </button>
-            </div>
+            <ConsultationForm />
           </FadeIn>
         </div>
       </section>
