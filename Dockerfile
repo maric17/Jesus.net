@@ -1,27 +1,37 @@
-# Stage 1: Build the Next.js app
+# Stage 1: Install dependencies
+FROM node:20-alpine AS deps
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
+
+# Stage 2: Build the app
 FROM node:20-alpine AS builder
 WORKDIR /app
-
-# Install dependencies first (better caching)
-COPY package.json package-lock.json ./
-RUN npm install
-
-# Copy the rest of the code and build
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-# Ensure your next.config.js has 'output: "export"'
+# Next.js 15+ needs this env var during build for standalone
+ENV NEXT_PRIVATE_STANDALONE=true
 RUN npm run build
 
-# Stage 2: Serve with NGINX
-FROM nginx:alpine
-WORKDIR /usr/share/nginx/html
+# Stage 3: Run the app
+FROM node:20-alpine AS runner
+WORKDIR /app
 
-# Remove default NGINX static files
-RUN rm -rf ./*
+ENV NODE_ENV=production
+# Disable telemetry during runtime
+ENV NEXT_TELEMETRY_DISABLED=1
 
-# Copy the static build from the builder stage
-# Next.js exports to the 'out' folder by default
-COPY --from=builder /app/out .
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
 
-EXPOSE 80
+# Copy necessary files from builder
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-CMD ["nginx", "-g", "daemon off;"]
+USER nextjs
+
+EXPOSE 3000
+ENV PORT=3000
+# server.js is created by next build in standalone mode
+CMD ["node", "server.js"]
