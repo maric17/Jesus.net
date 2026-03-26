@@ -44,7 +44,7 @@ export default function ChurchesPage() {
   return (
     <main className="bg-brand-black text-white min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+      <section className="relative pt-32 pb-10 md:pt-48 md:pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/churches/church-banner.png" 
@@ -79,7 +79,7 @@ export default function ChurchesPage() {
 
           {/* Testimonial UX Note */}
           <FadeIn direction="up" delay={0.3} className="mt-16">
-            <div className="max-w-4xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2rem] relative overflow-hidden group hover:border-brand-yellow/30 transition-all duration-500 shadow-2xl">
+
               <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform duration-700">
                 <MessageSquare size={120} className="text-brand-yellow" />
               </div>
@@ -96,18 +96,8 @@ export default function ChurchesPage() {
                     controls
                   ></video>
                 </div>
-                
-                <div className="text-center">
-                  <p className="text-xl md:text-2xl font-medium leading-relaxed mb-6 italic text-gray-200 max-w-3xl mx-auto">
-                    &quot;These digital tools have allowed our small group leaders to engage our youth in ways we never thought possible. It&apos;s high-quality content that speaks the language of today&apos;s generation.&quot;
-                  </p>
-                  <div>
-                    <h4 className="text-lg font-bold text-white uppercase tracking-wider">Pastor Jun Fernandez</h4>
-                    <p className="text-brand-yellow font-medium">Lighthouse Community Church, QC</p>
-                  </div>
-                </div>
               </div>
-            </div>
+            
           </FadeIn>
         </div>
       </section>
