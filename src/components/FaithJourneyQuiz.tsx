@@ -50,29 +50,29 @@ const RESULTS = {
   himala: {
     title: "Himala Everyday",
     description: "Start each day with God. Our Filipino devotionals make Scripture practical and personal—perfect for busy lives.",
-    link: "https://himala.everyday.ph.jesus.net",
-    displayLink: "himala.everyday.ph.jesus.net",
+    link: "https://himalaeveryday.ph/",
+    displayLink: "himalaeveryday.ph",
     icon: BookHeart,
   },
   myjourney: {
     title: "MyJourney with The Chosen",
     description: "Go deeper into the stories of Jesus through interactive Bible studies paired with The Chosen series.",
-    link: "https://myjourney.ph.jesus.net",
+    link: "https://myjourney.ph.jesus.net/",
     displayLink: "myjourney.ph.jesus.net",
     icon: Film,
   },
   chosen: {
     title: "Watch The Chosen (Free)",
     description: "Experience the life of Jesus like never before. Stream all seasons free and see the Gospel come alive.",
-    link: "https://thechosen.ph.jesus.net",
-    displayLink: "thechosen.ph.jesus.net",
+    link: "https://ph.jesus.net/films-and-series/the-chosen",
+    displayLink: "ph.jesus.net/films-and-series/the-chosen",
     icon: PlayCircle,
   },
   community: {
     title: "Join Our Community",
     description: "Connect with other believers on the same journey. Find encouragement, accountability, and friendship.",
-    link: "https://ph.jesus.net/community",
-    displayLink: "ph.jesus.net/community",
+    link: "https://jesus.net.ph/community",
+    displayLink: "jesus.net.ph/community",
     icon: Users,
   },
 };
@@ -129,7 +129,6 @@ export default function FaithJourneyQuiz() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 href={recommendation.link}
-                target="_blank"
                 className="flex-1 inline-flex items-center justify-center gap-2 py-5 bg-brand-black text-white font-bold rounded-2xl hover:bg-brand-dark transition-all"
               >
                 Go to Tool <ExternalLink size={20} />
