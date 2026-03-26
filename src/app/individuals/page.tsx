@@ -17,8 +17,8 @@ const TOOLKIT = [
   {
     title: "Himala Everyday",
     description: "Start each day with God. Our Filipino devotionals make Scripture practical and personal—perfect for busy lives.",
-    link: "https://ph.jesus.net/a-miracle-every-day",
-    displayLink: "ph.jesus.net/a-miracle-every-day",
+    link: "https://himalaeveryday.ph/",
+    displayLink: "himalaeveryday.ph",
     icon: BookHeart,
     image: "/images/tools/himala.png",
   },
@@ -196,7 +196,6 @@ export default function IndividualsPage() {
                       
                       <Link 
                         href={tool.link}
-                        target="_blank"
                         className="mt-auto inline-flex items-center justify-center w-full px-6 py-4 rounded-2xl bg-brand-yellow text-brand-black font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:bg-white hover:scale-[1.02] active:scale-95"
                       >
                         Launch Tool
@@ -256,8 +255,8 @@ export default function IndividualsPage() {
               {
                 title: "Himala Everyday (Daily Devotion)",
                 description: "Assign daily readings between meetings. Members come prepared with fresh insights to share.",
-                link: "https://ph.jesus.net/a-miracle-every-day",
-                displayLink: "ph.jesus.net/a-miracle-every-day",
+                link: "https://himalaeveryday.ph/",
+                displayLink: "himalaeveryday.ph",
                 icon: Coffee
               },
               {
