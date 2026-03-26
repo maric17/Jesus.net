@@ -22,7 +22,7 @@ const TOOLS = [
     url: "https://himalaeveryday.ph/",
     displayUrl: "himalaeveryday.ph",
     icon: BookHeart,
-    image: "/images/chosen/chosen-image1.jpg",
+    image: "/images/churches/Taglish-iPhone-on-Hand.png",
   },
   {
     name: "MyJourney with The Chosen",
@@ -30,7 +30,7 @@ const TOOLS = [
     url: "https://myjourney.ph.jesus.net/",
     displayUrl: "myjourney.ph.jesus.net",
     icon: Film,
-    image: "/images/chosen/chosen-image2.jpg",
+    image: "/images/chosen/chosen-image1.jpg",
   },
   {
     name: "The Life of Jesus Film",
@@ -38,7 +38,7 @@ const TOOLS = [
     url: "https://www.youtube.com/watch?v=DYBZQHLFHqs",
     displayUrl: "www.youtube.com/watch?v=DYBZQHLFHqs",
     icon: Video,
-    image: "/images/chosen/chosen-image3.jpg",
+    image: "/images/chosen/The-Life-of-Jesus---portrait.png",
   },
   {
     name: "The Chosen Series",

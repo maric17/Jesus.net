@@ -20,7 +20,7 @@ const TOOLKIT = [
     link: "https://himalaeveryday.ph/",
     displayLink: "himalaeveryday.ph",
     icon: BookHeart,
-    image: "/images/tools/himala.png",
+    image: "/images/churches/Taglish-iPhone-on-Hand.png",
   },
   {
     title: "MyJourney with The Chosen",
@@ -28,7 +28,7 @@ const TOOLKIT = [
     link: "https://myjourney.ph.jesus.net/",
     displayLink: "myjourney.ph.jesus.net",
     icon: Film,
-    image: "/images/tools/my-journey.png",
+    image: "/images/chosen/chosen-image1.jpg",
   },
   {
     title: "Watch The Chosen (Free)",
@@ -36,7 +36,7 @@ const TOOLKIT = [
     link: "https://ph.jesus.net/films-and-series/the-chosen",
     displayLink: "ph.jesus.net/films-and-series/the-chosen",
     icon: PlayCircle,
-    image: "/images/tools/the-chosen.png",
+    image: "/images/chosen/chosen-image3.jpg",
   },
   {
     title: "Join Our Community",
