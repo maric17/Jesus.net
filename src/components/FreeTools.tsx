@@ -22,7 +22,7 @@ const TOOLS = [
     url: "https://ph.jesus.net/a-miracle-every-day",
     displayUrl: "ph.jesus.net/a-miracle-every-day",
     icon: BookHeart,
-    image: "/images/tools/himala.png",
+    image: "/images/chosen/chosen-image1.jpg",
   },
   {
     name: "MyJourney with The Chosen",
@@ -30,7 +30,7 @@ const TOOLS = [
     url: "https://myjourney.ph.jesus.net/",
     displayUrl: "myjourney.ph.jesus.net",
     icon: Film,
-    image: "/images/tools/my-journey.png",
+    image: "/images/chosen/chosen-image2.jpg",
   },
   {
     name: "The Life of Jesus Film",
@@ -38,7 +38,7 @@ const TOOLS = [
     url: "https://www.youtube.com/watch?v=DYBZQHLFHqs",
     displayUrl: "www.youtube.com/watch?v=DYBZQHLFHqs",
     icon: Video,
-    image: "/images/tools/jesus-film.png",
+    image: "/images/chosen/chosen-image3.jpg",
   },
   {
     name: "The Chosen Series",
@@ -46,7 +46,7 @@ const TOOLS = [
     url: "https://ph.jesus.net/films-and-series/the-chosen",
     displayUrl: "ph.jesus.net/films-and-series/the-chosen",
     icon: PlayCircle,
-    image: "/images/tools/the-chosen.png",
+    image: "/images/chosen/chosen-image4.jpg",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function FreeTools() {
   const displayTools = [...TOOLS, ...TOOLS];
 
   return (
-    <section className="py-24 bg-brand-light w-full text-brand-black overflow-hidden relative">
+    <section id="free-tools" className="py-24 bg-brand-light w-full text-brand-black overflow-hidden relative">
       <div className="container mx-auto px-6 md:px-12 relative z-10 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
         <FadeIn direction="up" className="max-w-2xl">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-black">

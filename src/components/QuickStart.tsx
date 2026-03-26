@@ -53,7 +53,7 @@ const START_CARDS = [
 
 export default function QuickStart() {
   return (
-    <section className="py-24 bg-brand-light w-full text-brand-black relative overflow-hidden">
+    <section id="quick-start" className="py-24 bg-brand-light w-full text-brand-black relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <FadeIn direction="up" className="max-w-2xl">
