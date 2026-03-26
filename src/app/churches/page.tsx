@@ -200,7 +200,6 @@ export default function ChurchesPage() {
                       </p>
                       <Link 
                         href={item.url}
-                        target="_blank"
                         className="mt-auto inline-flex items-center justify-between p-4 bg-white rounded-xl border border-gray-100 text-brand-black font-bold group-hover:bg-black group-hover:text-white transition-all duration-300"
                       >
                         <span className="truncate mr-2 font-mono text-sm opacity-60 group-hover:opacity-100">{item.linkText}</span>

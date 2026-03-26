@@ -1,10 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { User, Church, BookOpen, Briefcase, Handshake, Users, ArrowUpRight } from "lucide-react";
 import { FadeIn } from "@/components/FadeIn";
+import VolunteerModal from "@/components/VolunteerModal";
 
 const START_CARDS = [
   {
@@ -41,17 +42,26 @@ const START_CARDS = [
     linkText: "Volunteer Application",
     href: "#volunteer",
     icon: Handshake,
+    isModal: true,
   },
   {
     title: "I'm Looking for Community",
     description: "Join a community of digital missionaries across the Philippines",
     linkText: "Join Community",
-    href: "#community",
+    href: "/community",
     icon: Users,
   },
 ];
 
 export default function QuickStart() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedOpportunity, setSelectedOpportunity] = useState("");
+
+  const handleOpenModal = (title: string) => {
+    setSelectedOpportunity(title);
+    setIsModalOpen(true);
+  };
+
   return (
     <section id="quick-start" className="py-24 bg-brand-light w-full text-brand-black relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -71,6 +81,40 @@ export default function QuickStart() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
           {START_CARDS.map((card, index) => {
             const Icon = card.icon;
+            
+            const Content = (
+              <div className="flex flex-col h-full pl-2">
+                {/* Top animated line - black for light theme */}
+                <div className="w-full h-[1px] bg-black/10 mb-6 relative overflow-hidden">
+                  <motion.div 
+                    className="absolute inset-y-0 left-0 w-full bg-brand-yellow -translate-x-full group-hover:translate-x-0"
+                    transition={{ duration: 0.5, ease: "circOut" }}
+                  />
+                </div>
+
+                <div className="mb-8">
+                  <Icon strokeWidth={1.5} className="w-10 h-10 text-brand-black group-hover:text-brand-yellow transition-colors duration-500" />
+                </div>
+                
+                <h3 className="text-2xl font-semibold mb-4 text-brand-black group-hover:text-brand-yellow transition-colors duration-300">
+                  {card.title}
+                </h3>
+                
+                <p className="text-gray-500 mb-10 text-[16px] font-light leading-relaxed flex-grow">
+                  {card.description}
+                </p>
+                
+                <div className="flex items-center text-gray-400 group-hover:text-brand-black transition-colors duration-300 text-sm font-semibold tracking-wider uppercase mt-auto">
+                  <span className="mr-3">{card.linkText}</span>
+                  <motion.div
+                      className="p-2 rounded-full border border-black/10 group-hover:border-brand-yellow group-hover:bg-brand-yellow group-hover:text-brand-black transition-all duration-300"
+                  >
+                      <ArrowUpRight className="w-4 h-4" />
+                  </motion.div>
+                </div>
+              </div>
+            );
+
             return (
               <FadeIn 
                 key={card.title}
@@ -78,43 +122,29 @@ export default function QuickStart() {
                 delay={0.1 * index}
                 duration={0.6}
               >
-                <Link href={card.href} className="flex flex-col h-full group">
-                  {/* Top animated line - black for light theme */}
-                  <div className="w-full h-[1px] bg-black/10 mb-6 relative overflow-hidden">
-                    <motion.div 
-                      className="absolute inset-y-0 left-0 w-full bg-brand-yellow -translate-x-full group-hover:translate-x-0"
-                      transition={{ duration: 0.5, ease: "circOut" }}
-                    />
-                  </div>
-
-                  <div className="flex flex-col h-full pl-2">
-                    <div className="mb-8">
-                      <Icon strokeWidth={1.5} className="w-10 h-10 text-brand-black group-hover:text-brand-yellow transition-colors duration-500" />
-                    </div>
-                    
-                    <h3 className="text-2xl font-semibold mb-4 text-brand-black group-hover:text-brand-yellow transition-colors duration-300">
-                      {card.title}
-                    </h3>
-                    
-                    <p className="text-gray-500 mb-10 text-[16px] font-light leading-relaxed flex-grow">
-                      {card.description}
-                    </p>
-                    
-                    <div className="flex items-center text-gray-400 group-hover:text-brand-black transition-colors duration-300 text-sm font-semibold tracking-wider uppercase mt-auto">
-                      <span className="mr-3">{card.linkText}</span>
-                      <motion.div
-                         className="p-2 rounded-full border border-black/10 group-hover:border-brand-yellow group-hover:bg-brand-yellow group-hover:text-brand-black transition-all duration-300"
-                      >
-                         <ArrowUpRight className="w-4 h-4" />
-                      </motion.div>
-                    </div>
-                  </div>
-                </Link>
+                {card.isModal ? (
+                  <button 
+                    onClick={() => handleOpenModal(card.title)}
+                    className="flex flex-col h-full group text-left w-full"
+                  >
+                    {Content}
+                  </button>
+                ) : (
+                  <Link href={card.href} className="flex flex-col h-full group">
+                    {Content}
+                  </Link>
+                )}
               </FadeIn>
             );
           })}
         </div>
       </div>
+
+      <VolunteerModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        opportunityTitle={selectedOpportunity}
+      />
     </section>
   );
 }
