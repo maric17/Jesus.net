@@ -36,10 +36,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             cd ~/jesusnetph
-            echo "GOOGLE_SCRIPT_URL=${{ secrets.GOOGLE_SCRIPT_URL }}" > .env
-            echo "VOLUNTEER_SCRIPT_URL=${{ secrets.VOLUNTEER_SCRIPT_URL }}" >> .env
-            echo "NODE_ENV=production" >> .env
-            chmod 600 .env
+            echo "${{ secrets.FRONTEND_SECRETS }}" > .env
             
             docker compose pull
             docker compose up -d
