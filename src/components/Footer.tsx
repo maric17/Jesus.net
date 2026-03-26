@@ -33,13 +33,12 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links Column 1 */}
           <div className="flex flex-col gap-4">
             <h4 className="text-white font-semibold mb-2 uppercase tracking-wider text-xs">Resources</h4>
-            <Link href="https://ph.jesus.net/a-miracle-every-day" target="_blank" className="hover:text-brand-yellow transition-colors text-sm">Himala Everyday</Link>
-            <Link href="https://ph.jesus.net/the-chosen#courses" target="_blank" className="hover:text-brand-yellow transition-colors text-sm">MyJourney with The Chosen</Link>
-            <Link href="https://ph.jesus.net/films-and-series" target="_blank" className="hover:text-brand-yellow transition-colors text-sm">Films and Series</Link>
-            <Link href="https://ph.jesus.net/films-and-series/the-chosen" target="_blank" className="hover:text-brand-yellow transition-colors text-sm">The Chosen Series</Link>
+            <Link href="https://himalaeveryday.ph/" className="hover:text-brand-yellow transition-colors text-sm">Himala Everyday</Link>
+            <Link href="https://ph.jesus.net/the-chosen#courses" className="hover:text-brand-yellow transition-colors text-sm">MyJourney with The Chosen</Link>
+            <Link href="https://ph.jesus.net/films-and-series" className="hover:text-brand-yellow transition-colors text-sm">Films and Series</Link>
+            <Link href="https://ph.jesus.net/films-and-series/the-chosen" className="hover:text-brand-yellow transition-colors text-sm">The Chosen Series</Link>
           </div>
 
           {/* Links Column 2 */}

@@ -19,8 +19,8 @@ const TOOLS = [
   {
     name: "Himala Everyday",
     description: "Daily devotionals in Filipino that bring Scripture to life with practical reflections for your everyday walk with God.",
-    url: "https://ph.jesus.net/a-miracle-every-day",
-    displayUrl: "ph.jesus.net/a-miracle-every-day",
+    url: "https://himalaeveryday.ph/",
+    displayUrl: "himalaeveryday.ph",
     icon: BookHeart,
     image: "/images/chosen/chosen-image1.jpg",
   },
@@ -150,7 +150,6 @@ export default function FreeTools() {
                       
                       <Link 
                         href={tool.url}
-                        target="_blank"
                         className="mt-auto inline-flex items-center justify-center w-full px-6 py-4 rounded-2xl bg-brand-yellow text-brand-black font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:bg-white hover:scale-[1.02] active:scale-95"
                       >
                         Explore Now

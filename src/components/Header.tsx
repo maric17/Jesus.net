@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { name: "Churches", href: "/churches" },
   { name: "Community", href: "/community" },
   { name: "Partner", href: "/partner" },
+  { name: "Himala Everyday", href: "https://himalaeveryday.ph/" },
 ];
 
 export default function Header() {
