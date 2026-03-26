@@ -33,7 +33,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links Column 1 */}
           <div className="flex flex-col gap-4">
             <h4 className="text-white font-semibold mb-2 uppercase tracking-wider text-xs">Resources</h4>
             <Link href="https://himalaeveryday.ph/" className="hover:text-brand-yellow transition-colors text-sm">Himala Everyday</Link>
