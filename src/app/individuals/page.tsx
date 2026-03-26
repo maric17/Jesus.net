@@ -15,7 +15,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const TOOLKIT = [
   {
-    title: "Himala Everyday",
+    title: "Himala Every day",
     description: "Start each day with God. Our Filipino devotionals make Scripture practical and personal—perfect for busy lives.",
     link: "https://himalaeveryday.ph/",
     displayLink: "himalaeveryday.ph",
@@ -253,7 +253,7 @@ export default function IndividualsPage() {
                 icon: BookOpen
               },
               {
-                title: "Himala Everyday (Daily Devotion)",
+                title: "Himala Every day (Daily Devotion)",
                 description: "Assign daily readings between meetings. Members come prepared with fresh insights to share.",
                 link: "https://himalaeveryday.ph/",
                 displayLink: "himalaeveryday.ph",
