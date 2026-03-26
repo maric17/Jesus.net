@@ -1,6 +1,7 @@
 "use client";
 
 import { FadeIn } from "@/components/FadeIn";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -38,12 +39,18 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-gradient-to-r from-brand-red to-brand-orange text-white font-bold px-8 py-4 rounded-full transition-all hover:scale-105 active:scale-95 shadow-lg shadow-brand-red/20 flex items-center justify-center gap-2 group">
+            <Link 
+              href="#quick-start"
+              className="bg-gradient-to-r from-brand-red to-brand-orange text-white font-bold px-8 py-4 rounded-full transition-all hover:scale-105 active:scale-95 shadow-lg shadow-brand-red/20 flex items-center justify-center gap-2 group"
+            >
               Get Started
-            </button>
-            <button className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-medium px-8 py-4 rounded-full transition-all border border-white/20 flex items-center justify-center">
+            </Link>
+            <Link 
+              href="#free-tools"
+              className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-medium px-8 py-4 rounded-full transition-all border border-white/20 flex items-center justify-center"
+            >
               Explore Tools
-            </button>
+            </Link>
           </div>
         </FadeIn>
       </div>

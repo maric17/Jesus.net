@@ -84,25 +84,25 @@ export default function ChurchesPage() {
                 <MessageSquare size={120} className="text-brand-yellow" />
               </div>
               
-              <div className="flex flex-col md:flex-row gap-8 items-center">
-                <div className="relative w-24 h-24 md:w-32 md:h-32 shrink-0">
-                  <div className="absolute inset-0 bg-brand-yellow rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
-                  <div className="relative w-full h-full bg-gray-800 rounded-2xl overflow-hidden border-2 border-brand-yellow/20">
-                    <Image 
-                      src="/images/churches/pastor-fernandez.png" 
-                      alt="Pastor Jun Fernandez" 
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+              <div className="flex flex-col gap-10 items-center relative z-10">
+                <div className="w-full max-w-2xl aspect-video rounded-3xl overflow-hidden shadow-2xl border-2 border-brand-yellow/20 bg-gray-900 group-hover:border-brand-yellow/40 transition-colors duration-500">
+                  <video 
+                    src="/video/fb_video.mp4" 
+                    className="w-full h-full object-cover"
+                    autoPlay 
+                    muted 
+                    loop 
+                    playsInline
+                    controls
+                  ></video>
                 </div>
                 
-                <div className="flex-1 text-center md:text-left">
-                  <p className="text-xl md:text-2xl font-medium leading-relaxed mb-6 italic text-gray-200">
+                <div className="text-center">
+                  <p className="text-xl md:text-2xl font-medium leading-relaxed mb-6 italic text-gray-200 max-w-3xl mx-auto">
                     &quot;These digital tools have allowed our small group leaders to engage our youth in ways we never thought possible. It&apos;s high-quality content that speaks the language of today&apos;s generation.&quot;
                   </p>
                   <div>
-                    <h4 className="text-lg font-bold text-white">Pastor Jun Fernandez</h4>
+                    <h4 className="text-lg font-bold text-white uppercase tracking-wider">Pastor Jun Fernandez</h4>
                     <p className="text-brand-yellow font-medium">Lighthouse Community Church, QC</p>
                   </div>
                 </div>
@@ -149,7 +149,7 @@ export default function ChurchesPage() {
                   ))}
                 </ul>
                 <Link 
-                  href="https://lifeofjesus.ph.jesus.net"
+                  href="#partnership"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-brand-black text-white font-bold rounded-2xl hover:bg-brand-dark transition-all duration-300 shadow-xl shadow-black/10 hover:-translate-y-1"
                 >
                   Learn More about Screenings <ArrowRight size={18} />
@@ -161,17 +161,14 @@ export default function ChurchesPage() {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-brand-yellow/10 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="relative bg-black aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-gray-100/50">
-                  <Image 
-                    src="/images/churches/film-screening.png" 
-                    alt="Life of Jesus Screening" 
-                    fill
-                    className="object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-brand-yellow rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500">
-                      <PlayCircle size={40} className="text-brand-black ml-1" />
-                    </div>
-                  </div>
+                  <iframe 
+                    src="https://www.youtube.com/embed/s8W2nQoJJtw?si=hZ0tWKjiwhTw_-LL" 
+                    title="YouTube video player"
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowFullScreen
+                  ></iframe>
                 </div>
               </div>
             </FadeIn>
@@ -223,11 +220,11 @@ export default function ChurchesPage() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right" className="order-2 lg:order-1 flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-[300px]">
+              <div className="relative w-full max-w-[450px]">
                 <div className="absolute -top-10 -left-10 w-48 h-48 bg-brand-yellow/20 rounded-full blur-[60px]"></div>
-                <div className="relative z-10 aspect-[11/18.5] bg-brand-black rounded-[2rem] overflow-hidden border-4 border-white/10 shadow-2xl shadow-black/40">
+                <div className="relative z-10 aspect-square bg-brand-black rounded-[2rem] overflow-hidden border-4 border-white/10 shadow-2xl shadow-black/40">
                   <Image 
-                    src="/images/churches/Taglish-iPhone-on-Hand.png" 
+                    src="/images/churches/9cbf2be3-7b53-4026-976f-067f970017c7.webp" 
                     alt="MyJourney App Mockup" 
                     fill
                     className="object-cover"
@@ -279,7 +276,7 @@ export default function ChurchesPage() {
       </section>
 
       {/* CTA section */}
-      <section className="py-24 bg-brand-black relative overflow-hidden">
+      <section id="partnership" className="py-24 bg-brand-black relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full z-0 opacity-10 pointer-events-none">
           <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-brand-yellow rounded-full blur-[150px]"></div>
         </div>
