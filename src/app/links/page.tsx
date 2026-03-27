@@ -11,7 +11,7 @@ import {
 import { FadeIn } from "@/components/FadeIn";
 
 const LINKS = [
-  { name: "Himala Every day", url: "himala.everyday.ph.jesus.net", category: "Daily Content" },
+  { name: "Himala Every Day", url: "himala.everyday.ph.jesus.net", category: "Daily Content" },
   { name: "MyJourney with The Chosen", url: "myjourney.ph.jesus.net", category: "Discipleship" },
   { name: "The Life of Jesus Film", url: "lifeofjesus.ph.jesus.net", category: "Film/Media" },
   { name: "The Life of Jesus (Churches)", url: "ph.jesus.net/churches/screening", category: "Church Tools" },
